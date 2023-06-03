@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.shoppinglisttestingexample.HiltTestRunner"
 
         buildConfigField("String", "UNSPLASH_ACCESS_API_KEY", unsplash_access_api_key)
     }
