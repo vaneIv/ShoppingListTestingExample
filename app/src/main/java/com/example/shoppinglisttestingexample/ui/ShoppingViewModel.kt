@@ -98,7 +98,7 @@ class ShoppingViewModel @Inject constructor(
         }
 
         val shoppingItem =
-            ShoppingItem("name", amount, priceString.toFloat(), _curImageUrl.value ?: "")
+            ShoppingItem(name, amount, priceString.toFloat(), _curImageUrl.value ?: "")
         insertShoppingItemIntoDb(shoppingItem)
         setCurrentImage("")
         _insertShoppingItemStatus.postValue(Event(Resource.success(shoppingItem)))
