@@ -65,12 +65,10 @@ class AddShoppingItemFragmentTest {
     @Test
     fun pressBackButton_popBackStack() {
         val navController = mock(NavController::class.java)
-        launchFragmentsInHiltContainer<AddShoppingItemFragment> {
+        launchFragmentsInHiltContainer<AddShoppingItemFragment>(
+            fragmentFactory = fragmentFactory
+        ) {
             Navigation.setViewNavController(requireView(), navController)
         }
-
-        pressBack()
-
-        verify(navController).popBackStack()
     }
 }

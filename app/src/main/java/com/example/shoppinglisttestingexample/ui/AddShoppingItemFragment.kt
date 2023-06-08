@@ -11,13 +11,12 @@ import com.bumptech.glide.RequestManager
 import com.example.shoppinglisttestingexample.R
 import com.example.shoppinglisttestingexample.other.Status
 import com.google.android.material.snackbar.Snackbar
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_add_shopping_item.btn_add_shopping_item
 import kotlinx.android.synthetic.main.fragment_add_shopping_item.edit_text_shopping_item_amount
 import kotlinx.android.synthetic.main.fragment_add_shopping_item.edit_text_shopping_item_name
 import kotlinx.android.synthetic.main.fragment_add_shopping_item.edit_text_shopping_item_price
 import kotlinx.android.synthetic.main.fragment_add_shopping_item.image_view_shopping_image
-import kotlinx.android.synthetic.main.fragment_shopping.rootLayout
+import kotlinx.android.synthetic.main.fragment_shopping.root_layout
 import javax.inject.Inject
 
 class AddShoppingItemFragment @Inject constructor(
@@ -64,7 +63,7 @@ class AddShoppingItemFragment @Inject constructor(
                 when (result.status) {
                     Status.SUCCESS -> {
                         Snackbar.make(
-                            requireActivity().rootLayout,
+                            requireActivity().root_layout,
                             "Added Shopping Item",
                             Snackbar.LENGTH_LONG
                         ).show()
@@ -73,7 +72,7 @@ class AddShoppingItemFragment @Inject constructor(
 
                     Status.ERROR -> {
                         Snackbar.make(
-                            requireActivity().rootLayout,
+                            requireActivity().root_layout,
                             result.message ?: "An unknown error occcured",
                             Snackbar.LENGTH_LONG
                         ).show()
